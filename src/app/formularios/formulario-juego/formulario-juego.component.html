@@ -1,0 +1,46 @@
+<h1>Formulario Videojuego</h1>
+
+<form [formGroup]="juegoForm" (ngSubmit)="submit()">
+  <div class="datosJuego">
+    <label
+      >Nombre del Videojuego
+      <input type="text" formControlName="nombre" />
+    </label>
+    <label>
+      Plataforma
+      <input type="text" formControlName="plataforma" />
+    </label>
+    <label>
+      Consola
+      <input type="checkbox" formControlName="consola" />
+    </label>
+  </div>
+
+  <div formGroupName="especificaciones" class="especificaciones">
+    <h2>Especificaciones</h2>
+    <label
+      >Version
+      <input type="number" formControlName="version" />
+    </label>
+    <label>
+      Genero
+      <input type="text" formControlName="genero" />
+    </label>
+    <label>
+      Fecha De Emision
+      <input type="date" formControlName="fechaDeEmision" />
+    </label>
+  </div>
+
+  <div formArrayName="juegos">
+    <h2>Juegos</h2>
+    <div *ngFor="let juegos of juegos.controls; let i = index" class="juegos">
+      <label> Juegos <input type="text" [formControlName]="i" /> </label>
+    </div>
+    <button (click)="agregarJuego()">Agregar Juego</button>
+  </div>
+
+  <br />
+
+  <button type="submit">Guardar</button>
+</form>

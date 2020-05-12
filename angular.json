@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tp3-ortiz"
+    }
+  },
+  "defaultProject": "tp3-ortiz",
+  "cli": {
+    "analytics": false
+  }
 }
