@@ -1,1 +1,26 @@
-<p>juego works!</p>
+<h1>JUEGOS DE VIDEO</h1>
+
+<!-- Interpolacion -->
+<p>Nombre del Juego: {{ nombreJuego }}</p>
+<p>Version: {{ juego.version }}</p>
+
+<div>
+  <!-- Property Binding Img -->
+  <img
+    [src]="imagenJuego"
+    [title]="tooltip"
+    [width]="anchoImg"
+    [height]="altoImg"
+  />
+</div>
+<br />
+<div>
+  <!-- Event Binding -->
+  <button (click)="verJuego(nombreJuego)">Ver Juego</button>
+</div>
+<br />
+<div>
+  <!-- Two way Data Binding -->
+  <input [(ngModel)]="plataforma" />
+  <p>{{ plataforma }}</p>
+</div>
