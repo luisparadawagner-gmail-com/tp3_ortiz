@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { FormularioJuegoComponent } from './formularios/formulario-juego/formulario-juego.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ConsolaComponent } from './componentes/consola/consola/consola.component';
+import { JuegoComponent } from './componentes/juego/juego.component';
 
 @NgModule({
-  declarations: [AppComponent, FormularioJuegoComponent],
+  declarations: [AppComponent, FormularioJuegoComponent, ConsolaComponent, JuegoComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
