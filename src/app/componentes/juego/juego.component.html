@@ -1,8 +1,8 @@
 <h1>JUEGOS DE VIDEO</h1>
 
 <!-- Interpolacion -->
-<p>Nombre del Juego: {{ nombreJuego }}</p>
-<p>Version: {{ juego.version }}</p>
+<p>NOMBRE DE JUEGO: {{ nombreJuego }}</p>
+<p>VERSION: {{ juego.version }}</p>
 
 <div>
   <!-- Property Binding Img -->
@@ -22,5 +22,22 @@
 <div>
   <!-- Two way Data Binding -->
   <input [(ngModel)]="plataforma" />
-  <p>{{ plataforma }}</p>
+  <p>{{ plataforma | uppercase }}</p>
 </div>
+<br />
+<ul *ngIf="verJuego">
+  <h2>Demas Juegos</h2>
+  <li *ngFor="let juego of juego1">
+    <!--NOMBRE -->{{ juego.nombre | uppercase }}
+    <br />
+    <!--PLATAFORMA -->{{ juego.plataforma | lowercase }}
+    <p *ngIf="juego.nombre === 'Zelda'">NUEVO JUEGO DE NINTENDO</p>
+  </li>
+</ul>
+<br />
+<ul>
+  <h2>Remasterizados</h2>
+  <li *ngFor="let juego of juegos">
+    {{ juego | uppercase }}
+  </li>
+</ul>
