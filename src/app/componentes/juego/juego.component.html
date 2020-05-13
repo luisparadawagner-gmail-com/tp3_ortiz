@@ -23,12 +23,17 @@
 <br />
 <div>
   <!-- Two way Data Binding -->
-  <input [(ngModel)]="plataforma" />
+  <mat-form-field>
+    <input [(ngModel)]="plataforma" matInput />
+  </mat-form-field>
   <p>{{ plataforma | uppercase }}</p>
 </div>
 <br />
 <ul *ngIf="verJuego">
-  <h2>Demas Juegos</h2>
+  <h2>
+    <mat-icon>sports_esports</mat-icon>
+    Demas Juegos
+  </h2>
   <li *ngFor="let juego of juego1">
     <!--NOMBRE -->{{ juego.nombre | uppercase }}
     <br />
@@ -38,7 +43,10 @@
 </ul>
 <br />
 <ul>
-  <h2>Remasterizados</h2>
+  <h2>
+    <mat-icon>sports_esports</mat-icon>
+    Remasterizados
+  </h2>
   <li *ngFor="let juego of juegos">
     {{ juego | uppercase }}
   </li>

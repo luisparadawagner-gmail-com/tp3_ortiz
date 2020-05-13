@@ -2,41 +2,59 @@
 
 <form [formGroup]="juegoForm" (ngSubmit)="submit()">
   <div class="datosJuego">
-    <label
-      >Nombre del Videojuego
-      <input type="text" formControlName="nombre" />
-    </label>
-    <label>
-      Plataforma
-      <input type="text" formControlName="plataforma" />
-    </label>
-    <label>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        formControlName="nombre"
+        placeholder="Nombre Videojuego"
+      /> </mat-form-field
+    >&nbsp;
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        formControlName="plataforma"
+        placeholder="Plataforma"
+      /> </mat-form-field
+    >&nbsp;
+    <mat-checkbox>
       Consola
-      <input type="checkbox" formControlName="consola" />
-    </label>
+    </mat-checkbox>
   </div>
-
+  <br />
   <div formGroupName="especificaciones" class="especificaciones">
     <h2>Especificaciones</h2>
-    <label
-      >Version
-      <input type="number" formControlName="version" />
-    </label>
-    <label>
-      Genero
-      <input type="text" formControlName="genero" />
-    </label>
+    <mat-form-field>
+      <input
+        type="number"
+        matInput
+        formControlName="version"
+        placeholder="Version"
+      /> </mat-form-field
+    >&nbsp;
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        formControlName="genero"
+        placeholder="Genero"
+      /> </mat-form-field
+    >&nbsp;
     <label>
       Fecha De Emision
-      <input type="date" formControlName="fechaDeEmision" />
-    </label>
+      <input type="date" formControlName="fechaDeEmision" /> </label
+    >&nbsp;
   </div>
 
   <div formArrayName="juegos">
     <h2>Juegos</h2>
     <div *ngFor="let juegos of juegos.controls; let i = index" class="juegos">
-      <label> Juegos <input type="text" [formControlName]="i" /> </label>
+      <mat-form-field>
+        <input type="text" matInput [formControlName]="i" placeholder="Juego" />
+      </mat-form-field>
     </div>
+    <br />
     <button mat-stroked-button color="primary" (click)="agregarJuego()">
       Agregar Juego
     </button>
@@ -46,3 +64,4 @@
 
   <button mat-stroked-button color="accent" type="submit">Guardar</button>
 </form>
+<br />
