@@ -3,13 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-consola',
   templateUrl: './consola.component.html',
-  styleUrls: ['./consola.component.css']
+  styleUrls: ['./consola.component.css'],
 })
 export class ConsolaComponent implements OnInit {
+  consolaFavorita: string = 'Sega Genesis';
+  otraConsolaFavorita: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onCambioConsola(consolaNueva) {
+    this.otraConsolaFavorita = consolaNueva;
   }
-
 }

@@ -1,1 +1,8 @@
-<p>consola works!</p>
+<app-juego
+  [consolaHijo]="consolaFavorita"
+  (consolaHijoEvento)="onCambioConsola($event)"
+></app-juego>
+<p>OTRAS CONSOLAS FAVORITAS</p>
+
+<!--PADRE-->
+<p>Otra Consola Favorita: {{ otraConsolaFavorita }}</p>

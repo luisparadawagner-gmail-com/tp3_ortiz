@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Juego } from './../clases/Juego';
 
 @Component({
@@ -7,6 +7,9 @@ import { Juego } from './../clases/Juego';
   styleUrls: ['./juego.component.css'],
 })
 export class JuegoComponent implements OnInit {
+  @Input() consolaHijo: string;
+  @Output() consolaHijoEvento = new EventEmitter<string>();
+
   nombreJuego: string;
   plataforma: string = 'Nintendo';
   verJuegos: boolean = true;
@@ -59,5 +62,9 @@ export class JuegoComponent implements OnInit {
 
   verJuego(juego: any) {
     alert('Juego: ' + juego);
+  }
+
+  cambioConsola() {
+    this.consolaHijoEvento.emit('Nintendo 64');
   }
 }
