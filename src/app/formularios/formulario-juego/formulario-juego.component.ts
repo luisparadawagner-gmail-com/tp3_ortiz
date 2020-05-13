@@ -32,5 +32,19 @@ export class FormularioJuegoComponent {
   submit() {
     debugger;
     this.juegoForm.value;
+
+    this.juegoForm.setValue({
+      nombre: 'Cs Go',
+      plataforma: 'Steam',
+      consola: '',
+      especificaciones: {
+        version: '1',
+        genero: 'Shooter',
+        fechaDeEmision: 22 / 10 / 1996,
+      },
+      juegos: this.juegos.value,
+    });
+
+    this.juegoForm.patchValue({ fechaDeEmision: 1 / 5 / 1996 });
   }
 }

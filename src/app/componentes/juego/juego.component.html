@@ -1,0 +1,59 @@
+<h1>JUEGOS DE VIDEO</h1>
+
+<!-- Interpolacion -->
+<p>NOMBRE DE JUEGO: {{ nombreJuego }}</p>
+<p>VERSION: {{ juego.version }}</p>
+
+<div>
+  <!-- Property Binding Img -->
+  <img
+    [src]="imagenJuego"
+    [title]="tooltip"
+    [width]="anchoImg"
+    [height]="altoImg"
+  />
+</div>
+<br />
+<div>
+  <!-- Event Binding -->
+  <button mat-raised-button color="warn" (click)="verJuego(nombreJuego)">
+    Ver Juego
+  </button>
+</div>
+<br />
+<div>
+  <!-- Two way Data Binding -->
+  <mat-form-field>
+    <input [(ngModel)]="plataforma" matInput />
+  </mat-form-field>
+  <p>{{ plataforma | uppercase }}</p>
+</div>
+<br />
+<ul *ngIf="verJuego">
+  <h2>
+    <mat-icon>sports_esports</mat-icon>
+    Demas Juegos
+  </h2>
+  <li *ngFor="let juego of juego1">
+    <!--NOMBRE -->{{ juego.nombre | uppercase }}
+    <br />
+    <!--PLATAFORMA -->{{ juego.plataforma | lowercase }}
+    <p *ngIf="juego.nombre === 'Zelda'">NUEVO JUEGO DE NINTENDO</p>
+  </li>
+</ul>
+<br />
+<ul>
+  <h2>
+    <mat-icon>sports_esports</mat-icon>
+    Remasterizados
+  </h2>
+  <li *ngFor="let juego of juegos">
+    {{ juego | uppercase }}
+  </li>
+</ul>
+
+<!-- Hijo-->
+<p>Consola Favorita: {{ consolaHijo }}</p>
+<button mat-raised-button color="primary" (click)="cambioConsola()">
+  Enviar otras Consolas Favoritas
+</button>
