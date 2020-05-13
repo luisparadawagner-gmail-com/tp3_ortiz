@@ -8,6 +8,7 @@ import { FormularioJuegoComponent } from './formularios/formulario-juego/formula
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ConsolaComponent } from './componentes/consola/consola.component';
 import { JuegoComponent } from './componentes/juego/juego.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,13 @@ import { JuegoComponent } from './componentes/juego/juego.component';
     ConsolaComponent,
     JuegoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

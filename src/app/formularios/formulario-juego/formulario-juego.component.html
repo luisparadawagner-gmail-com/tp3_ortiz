@@ -37,10 +37,12 @@
     <div *ngFor="let juegos of juegos.controls; let i = index" class="juegos">
       <label> Juegos <input type="text" [formControlName]="i" /> </label>
     </div>
-    <button (click)="agregarJuego()">Agregar Juego</button>
+    <button mat-stroked-button color="primary" (click)="agregarJuego()">
+      Agregar Juego
+    </button>
   </div>
 
   <br />
 
-  <button type="submit">Guardar</button>
+  <button mat-stroked-button color="accent" type="submit">Guardar</button>
 </form>

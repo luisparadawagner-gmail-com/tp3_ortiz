@@ -16,7 +16,9 @@
 <br />
 <div>
   <!-- Event Binding -->
-  <button (click)="verJuego(nombreJuego)">Ver Juego</button>
+  <button mat-raised-button color="warn" (click)="verJuego(nombreJuego)">
+    Ver Juego
+  </button>
 </div>
 <br />
 <div>
@@ -44,4 +46,6 @@
 
 <!-- Hijo-->
 <p>Consola Favorita: {{ consolaHijo }}</p>
-<button (click)="cambioConsola()">Enviar otras Consolas Favoritas</button>
+<button mat-raised-button color="primary" (click)="cambioConsola()">
+  Enviar otras Consolas Favoritas
+</button>
