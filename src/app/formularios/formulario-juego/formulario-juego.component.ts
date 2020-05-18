@@ -16,7 +16,7 @@ export class FormularioJuegoComponent {
     especificaciones: this.fb.group({
       version: [''],
       genero: [''],
-      fechaDeEmision: [''],
+      fechaDeCompra: [''],
     }),
     juegos: this.fb.array([this.fb.control('')]),
   });
@@ -40,11 +40,11 @@ export class FormularioJuegoComponent {
       especificaciones: {
         version: '1',
         genero: 'Shooter',
-        fechaDeEmision: 22 / 10 / 1996,
+        fechaDeCompra: new Date(),
       },
       juegos: this.juegos.value,
     });
 
-    this.juegoForm.patchValue({ fechaDeEmision: 1 / 5 / 1996 });
+    this.juegoForm.patchValue({ plataforma: 'Origin' });
   }
 }

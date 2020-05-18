@@ -5,6 +5,6 @@ export class Juego {
     public consola: boolean,
     public version: number,
     public genero: string,
-    public fechaDeEmision?: Date
+    public fechaDeCompra?: Date
   ) {}
 }
